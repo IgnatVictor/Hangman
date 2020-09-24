@@ -34,8 +34,14 @@ def word_country():
                     x = line
                     z = x.split("|")
                     return z[0].strip()
-    else:
-        return z[1].strip()
+    elif select_dif == 2:
+        with open (fname, 'r+') as f:
+                for line in f:
+                    count+=1
+                    if (count == y):
+                        x = line
+                        z = x.split("|")
+                        return z[1].strip()
               
 
 
@@ -66,7 +72,7 @@ def print_grafic(lives):
 def play():
     
     p = list(word_country().upper())
-    
+    print(p) 
     hidden = ["_"]* len(p)
     lives = lives1()
     
