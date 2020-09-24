@@ -4,6 +4,7 @@ from random import randint
 import random
 
 y = random.randint(1,183)
+
 select_dif = int(input("1 For easy /n 2 for hard /n Select dificulty :"))
 level_dif = False
 while (select_dif != 1 and select_dif!= 2 ):
@@ -72,19 +73,24 @@ def print_grafic(lives):
 def play():
     
     p = list(word_country().upper())
-    print(p) 
+    
     hidden = ["_"]* len(p)
     lives = lives1()
-    
+    n = " "
     incercari = []
-    k= list(word_country().upper())
-    gameover = False
+    k = list(word_country().upper())
+    while n in k:
+        index2 = k.index(n)
+        k[index2] = "_"
+            
     
+    gameover = False
+    print(k)
     while not gameover:
         print(hidden)
         print_grafic(lives)
         
-        if(k == hidden):
+        if(k == hidden or k == " "):
             print("YOU WIN")
             break
         n= is_litera().upper()
@@ -119,5 +125,13 @@ def play():
 
 
 play()
+    
+
+
+              
+
+
+
+
     
 
